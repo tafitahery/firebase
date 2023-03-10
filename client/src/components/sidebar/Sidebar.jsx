@@ -39,7 +39,7 @@ export default function Sidebar() {
             <span>Products</span>
           </li>
           <li>
-            <CreditCard />
+            <CreditCard className="icon" />
             <span>Orders</span>
           </li>
           <li>
