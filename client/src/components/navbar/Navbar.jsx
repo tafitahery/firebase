@@ -1,3 +1,5 @@
+import './navbar.scss';
+
 import {
   ChatBubbleOutlineOutlined,
   DarkModeOutlined,
@@ -7,9 +9,13 @@ import {
   NotificationsNoneOutlined,
   SearchOutlined,
 } from '@mui/icons-material';
-import './navbar.scss';
+import { useContext } from 'react';
+
+import { DarkModeContext } from '../../context/darkModeContext';
 
 export default function Navbar() {
+  const { dispatch } = useContext(DarkModeContext);
+
   return (
     <div className="navbar">
       <div className="wrapper">
@@ -22,7 +28,7 @@ export default function Navbar() {
             <LanguageOutlined className="icon" />
             English
           </div>
-          <div className="item">
+          <div className="item" onClick={() => dispatch({ type: 'TOGGLE' })}>
             <DarkModeOutlined className="icon" />
           </div>
           <div className="item">
